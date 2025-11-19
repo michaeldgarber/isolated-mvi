@@ -1,8 +1,8 @@
 #Script goal: extract information from Figure 4a in
 #and summarize in 6-month bins
 
-#Data are located in this Excel spreadsheet.
-#iMVI/measure-fig-4a-nankivell-2025/iMVI-relative-incidence-fig4a-nankivell.xlsx
+#Data are located in this csv
+#iMVI-incidence-by-dsa-fig4a-nankivell-csv-for-r
 
 #I measured the inches using powerpoint.
 
@@ -65,6 +65,9 @@ mvi_by_dsa_by_six_mos=mvi_by_dsa_by_time_bin %>%
 
 #So the answer is that iMVI is 2.285932 as likely before six months
 #as after
+
+#write this to a CSV for easier pasting into Word.
+write.csv(mvi_by_dsa_by_six_mos,"mvi_by_dsa_by_six_mos.csv")
 
 mvi_by_dsa_by_six_mos %>% View()
   
