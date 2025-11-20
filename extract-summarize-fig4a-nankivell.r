@@ -49,7 +49,7 @@ totals_over_follow_up
 
 #what's the overall ratio of dsa-neg to dsa-pos?
 
-
+70/202
 #sum number of cases by the six-month
 mvi_by_dsa_by_six_mos=mvi_by_dsa_by_time_bin %>% 
   group_by(before_six_mos) %>% 
@@ -93,23 +93,22 @@ mvi_by_dsa_by_six_mos=mvi_by_dsa_by_time_bin %>%
   
   
 
-mvi_by_dsa_by_six_mos %>% View()
 #So the answers:
 mvi_by_dsa_by_six_mos %>% 
   filter(before_six_mos==1) %>% 
   dplyr::select(ratio_dsa_neg_vs_total) %>% 
   pull()
 
-#Before 6 months, multiply the ratio from Sablik by 1.4
-#After Sablik, multiply the ratio from Sablik by 0.6178514
+#Before 6 months post-transplantation, multiply the ratio from Sablik by 1.4
 mvi_by_dsa_by_six_mos %>% 
   filter(before_six_mos==0) %>% 
   dplyr::select(ratio_dsa_neg_vs_total) %>% 
   pull()
+#After 6 mos, multiply the ratio from Sablik by 0.6178514
+
 
 
 #write this to a CSV for easier pasting into Word.
 write.csv(mvi_by_dsa_by_six_mos,"mvi_by_dsa_by_six_mos.csv")
 
-mvi_by_dsa_by_six_mos %>% View()
   
